@@ -1,0 +1,58 @@
+:root {
+  --cream: #FBF6EF;
+  --cream2: #F5EDD8;
+  --saffron: #C8720A;
+  --saffron-light: #E8960D;
+  --brown-dark: #4A2000;
+  --brown-mid: #6B3A10;
+  --brown-light: #A0622A;
+  --gold: #C8860A;
+  --gold-light: #FFD580;
+  --border: rgba(200,134,10,0.25);
+  --shadow: 0 8px 32px rgba(150,80,10,0.15);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  color: var(--brown-dark);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--cream2); }
+::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 3px; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.animate-fadeUp { animation: fadeUp 0.6s ease forwards; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+
+/* Mobile */
+button, a { -webkit-tap-highlight-color: transparent; }
+input, textarea, select { font-size: 16px !important; }
+
+@media (max-width: 640px) {
+  .hero-btns { flex-direction: column !important; align-items: stretch !important; }
+  .hero-btns a { text-align: center !important; }
+  .hero-stats { gap: 16px !important; }
+  .hero-stats > div { min-width: 70px; }
+  .trips-grid { grid-template-columns: 1fr !important; }
+  .cat-tabs { overflow-x: auto !important; flex-wrap: nowrap !important; padding-bottom: 6px; }
+  .cat-tabs::-webkit-scrollbar { display: none; }
+  .cat-tabs button { white-space: nowrap !important; }
+  .feedback-grid { grid-template-columns: 1fr !important; }
+  .feedback-inner { padding: 18px 14px !important; }
+  .admin-tabs { overflow-x: auto !important; flex-wrap: nowrap !important; width: 100% !important; }
+  .admin-tabs::-webkit-scrollbar { display: none; }
+  .admin-tabs button { white-space: nowrap !important; font-size: 11px !important; padding: 8px 12px !important; }
+  .admin-pad { padding: 16px 12px !important; }
+  .form-2col { grid-template-columns: 1fr !important; }
+  .admin-cards { grid-template-columns: 1fr !important; }
+  .stat-cards { grid-template-columns: 1fr 1fr !important; }
+  .footer-cols { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .cta-bottom { flex-direction: column !important; }
+  .pickup-row { flex-wrap: wrap !important; justify-content: center !important; }
+}
